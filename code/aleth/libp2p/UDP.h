@@ -48,8 +48,8 @@ namespace p2p
 class UDPDatagram
 {
 public:
-    UDPDatagram(bi::udp::endpoint const& _ep): locus(_ep) {}
-    UDPDatagram(bi::udp::endpoint const& _ep, bytes _data): data(_data), locus(_ep) {}
+    UDPDatagram(bi::udp::endpoint const& _ep): locus(_ep) {}    //一元构造函数，有时会充当默认的转换函数。
+    UDPDatagram(bi::udp::endpoint const& _ep, bytes _data): data(_data), locus(_ep) {}  //构造函数。
     bi::udp::endpoint const& endpoint() const { return locus; }
 
     bytes data;
